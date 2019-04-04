@@ -9,6 +9,9 @@ public class TO_DO_9 {
 			ch++;
 			
 		} while(ch != 'z');
+		ch= ch++;
+		
+		System.out.print(ch);
 		
 		
 
