@@ -27,7 +27,7 @@ public class StaticMember {
 		scanner.close();
 		
 		
-		System.out.println("백만원에 대해 계산");
+		
 		
 		CurrencyConverter cu = new CurrencyConverter(exchangeRate);
 		
