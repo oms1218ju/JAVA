@@ -49,7 +49,14 @@ class JPanel01 extends JPanel{
 	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				win.change("panel02");
+				try {
+					
+					Thread.sleep(1500);
+					win.change("panel02");
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 			}
 		});
@@ -123,24 +130,24 @@ class JPanel03 extends JPanel{
 		JLabel name = new JLabel(pick.getName());
 		Font f1 = new Font("Serif",Font.ITALIC,35);
 		name.setFont(f1);
-		name.setBounds(250,70,300,100);
+		name.setBounds(230,70,300,100);
 		name.setBackground(Color.WHITE);
 		name.setForeground(Color.BLACK);
 		
 		JLabel image = new JLabel(pick.getImageIcon());
-		image.setBounds(130,100,100,175);
+		image.setBounds(110,100,100,175);
 		
 		JLabel intro = new JLabel(pick.getIntro());
 		Font f2 = new Font("Serif",Font.BOLD,13);
 		intro.setFont(f2);
-		intro.setBounds(250,90,500,130);
+		intro.setBounds(230,90,500,130);
 		
 		
 		JTextPane description = new JTextPane(); //JLabel은 줄바꿈이 지원이 안되므로 JTextPane 사용
 		description.setText(pick.getDescription());
 		Font f3 = new Font("Serif",Font.BOLD,13);
 		description.setFont(f3);
-		description.setBounds(130,290,500,150);
+		description.setBounds(110,290,500,150);
 		
 		add(intro);
 		add(image);
@@ -151,7 +158,7 @@ class JPanel03 extends JPanel{
 	}
 	
 	public void paintComponent(Graphics g) {
-		//g.drawImage(interpret,0,0,null);
+		g.drawImage(interpret,0,0,null);
 		setOpaque(false); // 컴포넌트의 불투명을 설정
 		paintComponents(g); 
 	}
@@ -164,7 +171,7 @@ public class Game extends JFrame {
 	public JPanel03 jpanel03 = null;
 	
 	public static final int SCREEN_WIDTH = 700;
-	public static final int SCREEN_HEIGHT = 530;
+	public static final int SCREEN_HEIGHT = 560;
 	
 	public void change(String panelName) {
 		if(panelName.equals("panel01")) {
